@@ -1,0 +1,11 @@
+## Database Recommendation
+
+### "A healthcare startup is building a patient management system. One engineer recommends MySQL; another recommends MongoDB. Given your understanding of ACID vs BASE and the CAP theorem, which would you recommend and why? Would your answer change if they also needed to add a fraud detection module?"
+
+For a healthcare startup building a patient management system, MySQL would be the more appropriate choice for the core system. Healthcare applications deal with highly sensitive data such as patient records, prescriptions, and billing information, where accuracy and consistency are critical. MySQL follows ACID (Atomicity, Consistency, Isolation, Durability) principles, ensuring that transactions are reliable and data remains consistent even in cases of failure. This makes it well-suited for systems where data integrity and correctness cannot be compromised.
+
+From a CAP theorem perspective, MySQL-based systems typically prioritize consistency over availability, which aligns with healthcare requirements where correct data is more important than immediate system availability. In contrast, MongoDB follows a BASE (Basically Available, Soft state, Eventually consistent) model, which may allow temporary inconsistencies—making it less suitable for critical medical data.
+
+However, if the system also includes a fraud detection module, the requirements change. Fraud detection involves processing large volumes of semi-structured or unstructured data such as logs, user activity, and behavioral patterns. In this case, MongoDB becomes a strong candidate due to its flexible schema, scalability, and ability to handle high-throughput data efficiently.
+
+Therefore, a hybrid approach would be ideal. MySQL can be used for the core patient management system to ensure data accuracy and transactional reliability, while MongoDB can support the fraud detection module by enabling scalable and flexible data processing. This combination leverages the strengths of both ACID and BASE systems, resulting in a robust, scalable, and reliable architecture.
